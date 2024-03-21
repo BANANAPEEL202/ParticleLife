@@ -14,20 +14,31 @@ const int screenHeight = 800;
 const double dt = 0.005; //delta t
 const double frictionHalfLife = 0.040; //friction coefficient
 const double rMax = 100; //max radius to search particles in
+/*
 const int m = 3; //num colors
 double matrix[3][3] = {{1, 0.5, -0.5},
                        {-0.5, 1, 0.5},
                        {0.5, -0.5, 1}};
+*/
+const int m = 6; //num colors
+double matrix[6][6] = {{1, 0.5, -0.5, 0.2, 0.5, 0.6},
+                       {-0.5, 1, 0.5, -0.2, -1, -0.3},
+                       {1, 0, 0.5, 0.2, 1, -0.3},
+                        {-0.5, -0.5, 1, -0.5, 1, -0.3},
+                        {0.6, 0.2, 0.5, 0.2, 0.2, 0.3},
+                       {0.5, -0.5, 1, 1, -1, 0.5}};
+
+
 int partitionHash[numPartitions][9];
 Vector2 partitionMid[numPartitions];
-const double forceFactor = 20;
+const double forceFactor = 10;
 //enum color {ORANGE, RED, BLUE};
 double frictionFactor;
 
 Partition partitions[numPartitions];
 Particle particles[n];
 const int usePartitions = 1;
-const int DEBUG = 1;
+const int DEBUG = 0;
 Particle playerParticle;
 
 int main(void)
@@ -59,7 +70,7 @@ int main(void)
     srand(time(NULL));
     for (int i = 0; i < n; i++) {
         Particle newParticle;
-        newParticle.color = floor(rand()%6);
+        newParticle.color = floor(rand()%m);
         newParticle.position.x = rand() % screenWidth;
         newParticle.position.y = rand() % screenHeight;
         newParticle.velocity.x = 0;
@@ -81,7 +92,7 @@ int main(void)
             double xDist = GetMouseX() - playerParticle.position.x;
             double yDist = GetMouseY() - playerParticle.position.y;
             double dist = hypot(xDist, yDist);
-            double f = dist;
+            double f = fmax(dist*1.5, 10);
             double netForceX = xDist / dist * f;
             double netForceY = yDist / dist * f;
             netForceX = netForceX*dist;
@@ -99,13 +110,16 @@ int main(void)
             int subPartitions[4] = {0};
             getSubPartitions(subPartitions, &playerParticle);
             for (int i = 0; i < 4; i++) {
-                int partition = subPartitions[i];
+                int partition = partitionHash[playerParticle.partition][subPartitions[i]];
                 int x = modulo (partition, screenWidth/(rMax*2))*rMax*2;
                 int y = floor(partition/(screenWidth/(rMax*2)))*rMax*2;
                 DrawRectangle(x, y, rMax*2, rMax*2, (Color){ 255, 161, 0, 125 });
             }
             for (int x = 0; x < screenWidth; x += rMax*2) {
-
+                DrawLine(x, 0, x, screenHeight, RED);
+            }
+            for (int y = 0; y < screenHeight; y += rMax*2) {
+                DrawLine(0, y, screenWidth, y, RED);
             }
 
         }
@@ -124,6 +138,15 @@ int main(void)
             }
             else if ((*particle).color == 2) {
                 DrawCircleV((*particle).position, radius, GREEN);
+            }
+            else if ((*particle).color == 3) {
+                DrawCircleV((*particle).position, radius, RED);
+            }
+            else if ((*particle).color == 4) {
+                DrawCircleV((*particle).position, radius, PURPLE);
+            }
+            else if ((*particle).color == 5) {
+                DrawCircleV((*particle).position, radius, SKYBLUE);
             }
 
         }
@@ -214,7 +237,7 @@ void updateForce(Particle *particle){
 
 
 double force(double r, double attraction){
-    const double beta = 0.4;
+    const double beta = 0.5;
     if (r < beta){
         return r / beta - 1;
     }

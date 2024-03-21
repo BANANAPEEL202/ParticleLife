@@ -14,7 +14,7 @@
 #include <pthread.h>
 
 
-#define n 5000
+#define n 6000
 
 typedef struct  {
     Vector2 position;
