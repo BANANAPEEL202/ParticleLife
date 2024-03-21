@@ -202,7 +202,7 @@
 
 // Vector2, 2 components
 typedef struct Vector2 {
-    double x;                // Vector x component // was float
+    double x;                // Vector x component
     double y;                // Vector y component
 } Vector2;
 

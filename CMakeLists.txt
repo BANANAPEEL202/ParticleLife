@@ -1,6 +1,6 @@
 #https://www.youtube.com/watch?v=gQ-ZUL1mONU
 cmake_minimum_required(VERSION 3.11) # FetchContent is available in 3.11+
-project(example)
+project(ParticleLife)
 
 # Generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test.rule"
 		},
 		{
-			"file" : "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update.rule"
+			"file" : "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update.rule"
 		}
 	],
 	"target" : 

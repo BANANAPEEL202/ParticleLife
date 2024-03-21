@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-src"
-  "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-build"
-  "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix"
-  "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/tmp"
-  "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp"
-  "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src"
-  "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp"
+  "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-src"
+  "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-build"
+  "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix"
+  "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/tmp"
+  "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp"
+  "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src"
+  "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

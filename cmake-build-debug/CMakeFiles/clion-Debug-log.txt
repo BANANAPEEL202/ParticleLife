@@ -1,9 +1,34 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/home/Documents/Projects/ParticleLife -B /Users/home/Documents/Projects/ParticleLife/cmake-build-debug
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/home/Documents/GitHub/ParticleLife -B /Users/home/Documents/GitHub/ParticleLife/cmake-build-debug
 -- Populating raylib
 -- Configuring done (0.0s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-subbuild
-ninja: no work to do.
+-- Build files have been written to: /Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild
+[1/9] Creating directories for 'raylib-populate'
+[1/9] Performing download step (download, verify and extract) for 'raylib-populate'
+-- File already exists but no hash specified (use URL_HASH):
+  file='/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/5.0.tar.gz'
+Old file will be removed and new file downloaded from URL.
+-- Downloading...
+   dst='/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/5.0.tar.gz'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/raysan5/raylib/archive/refs/tags/5.0.tar.gz'
+-- Downloading... done
+-- extracting...
+     src='/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/5.0.tar.gz'
+     dst='/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[2/9] No update step for 'raylib-populate'
+[3/9] No patch step for 'raylib-populate'
+[5/9] No configure step for 'raylib-populate'
+[6/9] No build step for 'raylib-populate'
+[7/9] No install step for 'raylib-populate'
+[8/9] No test step for 'raylib-populate'
+[9/9] Completed 'raylib-populate'
 CMake Deprecation Warning at cmake-build-debug/_deps/raylib-src/CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 3.5 will be removed from a future version of
   CMake.
@@ -12,10 +37,15 @@ CMake Deprecation Warning at cmake-build-debug/_deps/raylib-src/CMakeLists.txt:1
   CMake that the project does not need compatibility with older versions.
 
 
+-- Performing Test COMPILER_HAS_THOSE_TOGGLES
+-- Performing Test COMPILER_HAS_THOSE_TOGGLES - Success
 -- Testing if -Werror=pointer-arith can be used -- compiles
 -- Testing if -Werror=implicit-function-declaration can be used -- compiles
 -- Testing if -fno-strict-aliasing can be used -- compiles
 -- Using raylib's GLFW
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
 -- Including Cocoa support
 CMake Warning (dev) at cmake-build-debug/_deps/raylib-src/cmake/LibraryConfigurations.cmake:22 (MESSAGE):
   OpenGL is deprecated starting with macOS 10.14 (Mojave)!
@@ -29,6 +59,6 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- Compiling with the flags:
 --   PLATFORM=PLATFORM_DESKTOP
 --   GRAPHICS=GRAPHICS_API_OPENGL_33
--- Configuring done (0.2s)
+-- Configuring done (4.3s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/home/Documents/Projects/ParticleLife/cmake-build-debug
+-- Build files have been written to: /Users/home/Documents/GitHub/ParticleLife/cmake-build-debug

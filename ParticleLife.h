@@ -21,6 +21,7 @@ typedef struct  {
     Vector2 velocity;
     int color;
     int partition;
+    int id;
 } Particle;
 
 typedef struct {
@@ -31,12 +32,14 @@ typedef struct {
 void updateParticles();
 double force(double, double);
 int getPartition(Vector2);
-int isClosePartition(int, int);
 void generatePartitionHash();
 int modulo(int, int);
 void removeFromPartition(Particle*);
 void addToPartition(Particle*);
+void getSubPartitions(int *, Particle*);
+void clearPartitions();
+void updateForce(Particle *);
+void updatePosition(Particle *);
 
-void *updateForce (void*);
 
 #endif //EXAMPLE_PARTICLELIFE_H

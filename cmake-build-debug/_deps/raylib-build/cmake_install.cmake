@@ -1,4 +1,4 @@
-# Install script for directory: /Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-src
+# Install script for directory: /Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-build/raylib/cmake_install.cmake")
+  include("/Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-build/raylib/cmake_install.cmake")
 
 endif()
 

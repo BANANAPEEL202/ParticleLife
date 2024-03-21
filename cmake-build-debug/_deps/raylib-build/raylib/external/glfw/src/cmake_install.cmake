@@ -1,4 +1,4 @@
-# Install script for directory: /Users/home/Documents/Projects/ParticleLife/cmake-build-debug/_deps/raylib-src/src/external/glfw/src
+# Install script for directory: /Users/home/Documents/GitHub/ParticleLife/cmake-build-debug/_deps/raylib-src/src/external/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
