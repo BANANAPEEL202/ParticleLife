@@ -74,3 +74,7 @@ cmake-build-debug/.ninja_log
 cmake-build-debug/ParticleLife
 cmake-build-debug/Testing/Temporary/LastTest.log
 *.log
+cmake-build-debug/.ninja_deps
+cmake-build-debug/.ninja_log
+cmake-build-debug/ParticleLife
+cmake-build-debug/Testing/Temporary/LastTest.log
