@@ -123,6 +123,10 @@ int main(void)
             }
 
         }
+
+        if (IsKeyDown(KEY_SPACE)) {
+            updateParameters();
+            }
         //----------------------------------------------------------------------------------
 
         BeginDrawing();
@@ -137,7 +141,7 @@ int main(void)
                 DrawCircleV((*particle).position, radius, BLUE);
             }
             else if ((*particle).color == 2) {
-                DrawCircleV((*particle).position, radius, GREEN);
+                DrawCircleV((*particle).position, radius, LIME);
             }
             else if ((*particle).color == 3) {
                 DrawCircleV((*particle).position, radius, RED);
@@ -365,5 +369,16 @@ void getSubPartitions(int *arr, Particle *particle) {
         arr[1] = 5;
         arr[2] = 7;
         arr[3] = 8;
+    }
+}
+
+void updateParameters(){
+    srand(time(NULL));
+
+    // Fill the matrix with random floats between 0 and 1
+    for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < m; ++j) {
+            matrix[i][j] = (float)rand() / (float)RAND_MAX * 2 -1;
+        }
     }
 }

@@ -14,7 +14,7 @@
 #include <pthread.h>
 
 
-#define n 6000
+#define n 5000
 
 typedef struct  {
     Vector2 position;
@@ -40,6 +40,7 @@ void getSubPartitions(int *, Particle*);
 void clearPartitions();
 void updateForce(Particle *);
 void updatePosition(Particle *);
+void updateParameters();
 
 
 #endif //EXAMPLE_PARTICLELIFE_H
