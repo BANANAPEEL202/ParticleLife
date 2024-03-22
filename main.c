@@ -16,9 +16,9 @@ const double frictionHalfLife = 0.040; //friction coefficient
 const double rMax = 100; //max radius to search particles in
 /*
 const int m = 3; //num colors
-double matrix[3][3] = {{1, 0.5, -0.5},
-                       {-0.5, 1, 0.5},
-                       {0.5, -0.5, 1}};
+double matrix[3][3] = {{1, 0.7, -0.5},
+                       {-0.5, 1, 0.7},
+                       {0.7, -0.5, 1}};
 */
 const int m = 6; //num colors
 double matrix[6][6] = {{1, 0.5, -0.5, 0.2, 0.5, 0.6},
@@ -29,9 +29,10 @@ double matrix[6][6] = {{1, 0.5, -0.5, 0.2, 0.5, 0.6},
                        {0.5, -0.5, 1, 1, -1, 0.5}};
 
 
+
 int partitionHash[numPartitions][9];
 Vector2 partitionMid[numPartitions];
-const double forceFactor = 10;
+const double forceFactor = 15;
 //enum color {ORANGE, RED, BLUE};
 double frictionFactor;
 
@@ -40,6 +41,9 @@ Particle particles[n];
 const int usePartitions = 1;
 const int DEBUG = 0;
 Particle playerParticle;
+float radius = 3;
+const double beta = 0.5; //used in force() calculation
+
 
 int main(void)
 {
@@ -51,6 +55,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
 
     frictionFactor = pow(0.5, dt/frictionHalfLife);
+
 
     if (DEBUG) {
         playerParticle.color = floor(rand()%6);
@@ -130,26 +135,28 @@ int main(void)
         //----------------------------------------------------------------------------------
 
         BeginDrawing();
-        ClearBackground(BLACK);
-        float radius = 3;
+        //ClearBackground(BLACK);
+        DrawRectangle(0, 0, screenWidth, screenHeight, BLACKTRANS);
+
         for (int i = 0; i < n; i++){
             Particle* particle = &particles[i];
-            if ((*particle).color == 0) {
+            int color = (*particle).color;
+            if (color == 0) {
                 DrawCircleV((*particle).position, radius, ORANGE);
             }
-            else if ((*particle).color == 1) {
+            else if (color == 1) {
                 DrawCircleV((*particle).position, radius, BLUE);
             }
-            else if ((*particle).color == 2) {
+            else if (color == 2) {
                 DrawCircleV((*particle).position, radius, LIME);
             }
-            else if ((*particle).color == 3) {
+            else if (color == 3) {
                 DrawCircleV((*particle).position, radius, RED);
             }
-            else if ((*particle).color == 4) {
+            else if (color == 4) {
                 DrawCircleV((*particle).position, radius, PURPLE);
             }
-            else if ((*particle).color == 5) {
+            else if (color == 5) {
                 DrawCircleV((*particle).position, radius, SKYBLUE);
             }
 
@@ -202,14 +209,33 @@ void updateForce(Particle *particle){
             for (int j = 0; j < (*partition).numParticles; j++) {
 
                 double xDist = (*partition).particles[j].position.x - (*particle).position.x;
+                if (xDist > screenWidth/2.0) {
+                    double particleX;
+                    if ((*particle).position.x < (*partition).particles[j].position.x) {
+                        particleX =  (*partition).particles[j].position.x - screenWidth;
+                    }
+                    else {
+                        particleX =  (*partition).particles[j].position.x + screenWidth;
+                    }
+                    xDist = particleX - (*particle).position.x;
+                }
                 double yDist = (*partition).particles[j].position.y - (*particle).position.y;
+                if (yDist > screenWidth/2.0) {
+                    double particleY;
+                    if ((*particle).position.y < (*partition).particles[j].position.y) {
+                        particleY =  (*partition).particles[j].position.y - screenHeight;
+                    }
+                    else {
+                        particleY =  (*partition).particles[j].position.y + screenWidth;
+                    }
+                    yDist = particleY - (*particle).position.y;
+                }
                 double dist = hypot(xDist, yDist);
                 if (dist > 0 && dist < rMax) {
                     double f = force(dist / rMax, matrix[(*particle).color][(*partition).particles[j].color]);
                     netForceX += xDist / dist * f;
                     netForceY += yDist / dist * f;
                 }
-
             }
 
         }
@@ -241,7 +267,6 @@ void updateForce(Particle *particle){
 
 
 double force(double r, double attraction){
-    const double beta = 0.5;
     if (r < beta){
         return r / beta - 1;
     }
@@ -285,8 +310,8 @@ int getPartition(Vector2 coord){
 
 
 void generatePartitionHash(){
-    int partitionCol = screenWidth/(rMax*2);
-    int partitionRow = screenHeight/(rMax*2);
+    int partitionCol = screenWidth/(rMax*2.0);
+    int partitionRow = screenHeight/(rMax*2.0 );
 
     for (int r = 0; r < partitionRow; r++){
         for (int c = 0; c < partitionCol; c++){
