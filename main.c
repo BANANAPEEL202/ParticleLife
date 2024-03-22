@@ -9,11 +9,11 @@ const int screenWidth = 1400;
 const int screenHeight = 800;
 
 //Simulation Initialization
-#define numPartitions 48
+#define numPartitions 112
 
 const double dt = 0.005; //delta t
-const double frictionHalfLife = 0.040; //friction coefficient
-const double rMax = 100; //max radius to search particles in
+const double frictionHalfLife = 0.060; //friction coefficient
+const double rMax = 50; //max radius to search particles in
 /*
 const int m = 3; //num colors
 double matrix[3][3] = {{1, 0.7, -0.5},
@@ -30,9 +30,10 @@ double matrix[6][6] = {{1, 0.5, -0.5, 0.2, 0.5, 0.6},
 
 
 
+
 int partitionHash[numPartitions][9];
 Vector2 partitionMid[numPartitions];
-const double forceFactor = 15;
+const double forceFactor = 10;
 //enum color {ORANGE, RED, BLUE};
 double frictionFactor;
 
@@ -42,7 +43,7 @@ const int usePartitions = 1;
 const int DEBUG = 0;
 Particle playerParticle;
 float radius = 3;
-const double beta = 0.5; //used in force() calculation
+const double beta = 0.4; //used in force() calculation
 
 
 int main(void)
@@ -136,7 +137,7 @@ int main(void)
 
         BeginDrawing();
         //ClearBackground(BLACK);
-        DrawRectangle(0, 0, screenWidth, screenHeight, BLACKTRANS);
+         DrawRectangle(0, 0, screenWidth, screenHeight, BLACKTRANS);
 
         for (int i = 0; i < n; i++){
             Particle* particle = &particles[i];

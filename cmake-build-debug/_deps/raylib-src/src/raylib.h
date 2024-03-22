@@ -185,7 +185,7 @@
 
 #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
 #define BLACK      CLITERAL(Color){ 0, 0, 0, 255 }         // Black
-#define BLACKTRANS      CLITERAL(Color){ 0, 0, 0, 150}         // Black Transparent
+#define BLACKTRANS      CLITERAL(Color){ 0, 0, 0, 180}         // Black Transparent
 #define BLANK      CLITERAL(Color){ 0, 0, 0, 0 }           // Blank (Transparent)
 #define MAGENTA    CLITERAL(Color){ 255, 0, 255, 255 }     // Magenta
 #define RAYWHITE   CLITERAL(Color){ 245, 245, 245, 255 }   // My own White (raylib logo)
